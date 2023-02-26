@@ -40,10 +40,11 @@ public class UserUpdateServlet extends HttpServlet {
          
         // read form fields
         int id =Integer.parseInt(request.getParameter("id"));
-        double account_balance = Double.parseDouble(request.getParameter("account_balance"));
+//        double account_balance = Double.parseDouble(request.getParameter("account_balance"));
+        double account_balance = 0;
          
         System.out.println("ID number: " + id);
-        System.out.println("Account Balance: " + account_balance);
+//        System.out.println("Account Balance: " + account_balance);
  
         // do some processing here...
          
@@ -53,7 +54,7 @@ public class UserUpdateServlet extends HttpServlet {
         // build HTML code
         String htmlResponse = "<html>";
         htmlResponse += "<h2>Your ID number is: " + id + "<br/>";      
-        htmlResponse += "Your Account Balance is: " + account_balance + "</h2>";    
+        htmlResponse += "Your Account Balance is: $" + String.format("%.2f",account_balance) + "</h2>";    
         htmlResponse += "</html>";
         
         // return response
